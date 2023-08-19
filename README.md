@@ -1,2 +1,2 @@
 # ByteAcontium
-tool to enable extreme debugging for decompiled android applications
+tool to enable extreme debugging for decompiled android applications.
