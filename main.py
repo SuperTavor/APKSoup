@@ -9,8 +9,8 @@ import datetime
 
 
 class APKSoupMain(QMainWindow):
-    injectSignal = pyqtSignal()  # Create a signal to trigger injection
-    progressSignal = pyqtSignal(int)  # Create a signal to update progress bar
+    injectSignal = pyqtSignal()  
+    progressSignal = pyqtSignal(int)  
 
     def __init__(self):
         super().__init__()
@@ -24,10 +24,7 @@ class APKSoupMain(QMainWindow):
         self.progress_timer = QTimer()
         self.progress_timer.timeout.connect(self.update_progress)
 
-        # Connect the signals to slots
-        # Connect injectSignal to inject slot
         self.injectSignal.connect(self.inject)
-        # Connect progressSignal to update_progress_bar slot
         self.progressSignal.connect(self.update_progress_bar)
 
     def browse_files(self):
@@ -72,8 +69,8 @@ class APKSoupMain(QMainWindow):
             self.update_instrument_progress(index, total_files)
             self.modify_smali_file(smali_file)
 
-        self.progressSignal.emit(0)  # Emit signal to start injection
-        self.injectSignal.emit()  # Emit signal to trigger injection in main thread
+        self.progressSignal.emit(0)
+        self.injectSignal.emit()  
 
     def modify_smali_file(self, smali_file):
         with open(smali_file, 'r') as file:
@@ -115,7 +112,7 @@ class APKSoupMain(QMainWindow):
 
             print("Injection complete!")
             self.progress_timer.stop()
-            self.progressSignal.emit(100)  # Emit signal to update progress bar
+            self.progressSignal.emit(100) 
             self.ui.soupButton.show()
             self.ui.apkFolderPathInputBox.setReadOnly(False)
             self.ui.browseFilesBtn.show()
