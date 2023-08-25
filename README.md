@@ -5,4 +5,5 @@ a tiny tool to automatically instrument decompiled android applications.
 customizable logging of functions running, values returned and activity loading.
 [NOT YET IMPLEMENTED] instrumentation of shared libraries
 
-release date: August 24th
+## Building
+Make sure you have all dependencies installed and then build using pyinstaller to your desired platform.
